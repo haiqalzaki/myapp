@@ -6,6 +6,10 @@ type Person struct {
 	Email string
 }
 
+// Golang function capitalization determines visibility
+// Uppercase method name = exported / accessible outside
+// Lowercase method name = local / inaccessible outside
+
 func Person_Create(name string, age uint, email string) Person {
 
 	return Person{
@@ -14,10 +18,6 @@ func Person_Create(name string, age uint, email string) Person {
 		Email: email,
 	}
 }
-
-// Golang function capitalization determines visibility
-// Uppercase method name = exported / accessible outside
-// Lowercase method name = local / inaccessible outside
 
 func (p Person) Walk() string {
 	return p.Name + " is walking..." + p.eating()
