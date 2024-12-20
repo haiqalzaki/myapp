@@ -25,18 +25,21 @@ func main() {
 	var userAge uint
 
 	// get input from user
-	fmt.Println("Enter name:")
-	fmt.Scanln(&userName)
+	fmt.Println("Enter name:") // output
+	fmt.Scanln(&userName)      // input
 	fmt.Println("Enter age:")
 	fmt.Scanln(&userAge)
 	fmt.Println("Enter email:")
 	fmt.Scanln(&userEmail)
 
+	// create new Person struct instance using Person_Create function
 	person := proto.Person_Create(userName, userAge, userEmail)
 
+	// display object data
 	fmt.Println("This is the user name:", person.Name)
 	fmt.Println("This is the user age:", person.Age)
 	fmt.Println("This is the user email:", person.Email)
 
+	// call Walk method (function associated with Person struct)
 	fmt.Println(person.Walk())
 }
