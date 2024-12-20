@@ -26,3 +26,7 @@ func (p Person) Walk() string {
 func (p Person) eating() string {
 	return " whilst eating ice cream!"
 }
+
+func Person_Get(person *Person) *Person {
+	return person
+}
