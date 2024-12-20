@@ -17,13 +17,26 @@ func main() {
 	var x uint = 287
 	var y uint = 599
 
-	var sum uint = utils.AddNumbers(x, y)
+	var totalSum uint = utils.AddNumbers(x, y)
 
-	fmt.Printf("This is the sum of two variables = %d\n", sum)
+	fmt.Printf("This is the sum of two variables = %d\n", totalSum)
 
-	person := proto.Proto_Struct("Mathias", 27, "mathias@kol.com")
+	var userName, userEmail string
+	var userAge uint
 
-	fmt.Println("This is the person name:", person.Name)
-	fmt.Println("This is the person age:", person.Age)
-	fmt.Println("This is the person email:", person.Email)
+	// get input from user
+	fmt.Println("Enter name:")
+	fmt.Scanln(&userName)
+	fmt.Println("Enter age:")
+	fmt.Scanln(&userAge)
+	fmt.Println("Enter email:")
+	fmt.Scanln(&userEmail)
+
+	person := proto.Person_Create(userName, userAge, userEmail)
+
+	fmt.Println("This is the user name:", person.Name)
+	fmt.Println("This is the user age:", person.Age)
+	fmt.Println("This is the user email:", person.Email)
+
+	fmt.Println(person.Walk())
 }

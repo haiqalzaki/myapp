@@ -43,10 +43,10 @@ func TestProto_Struct(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.Name, func(t *testing.T) {
-			result := Proto_Struct(test.Name, test.Age, test.Email)
+			result := Person_Create(test.Name, test.Age, test.Email)
 
 			if result != test.Expected {
-				t.Errorf("Proto_Struct(%s, %d, %s) = %+v; want %+v", test.Name, test.Age, test.Email, result, test.Expected)
+				t.Errorf("Person_Create(%s, %d, %s) = %+v; want %+v", test.Name, test.Age, test.Email, result, test.Expected)
 			}
 		})
 	}

@@ -6,7 +6,7 @@ type Person struct {
 	Email string
 }
 
-func Proto_Struct(name string, age uint, email string) Person {
+func Person_Create(name string, age uint, email string) Person {
 
 	object_person := Person{
 		Name:  name,
@@ -15,4 +15,16 @@ func Proto_Struct(name string, age uint, email string) Person {
 	}
 
 	return object_person
+}
+
+// Golang function capitalization determines visibility
+// Uppercase method name = exported / accessible outside
+// Lowercase method name = local / inaccessible outside
+
+func (p Person) Walk() string {
+	return p.Name + " is walking..." + p.eating()
+}
+
+func (p Person) eating() string {
+	return " whilst eating ice cream!"
 }
