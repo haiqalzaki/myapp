@@ -8,13 +8,11 @@ type Person struct {
 
 func Person_Create(name string, age uint, email string) Person {
 
-	object_person := Person{
+	return Person{
 		Name:  name,
 		Age:   age,
 		Email: email,
 	}
-
-	return object_person
 }
 
 // Golang function capitalization determines visibility
