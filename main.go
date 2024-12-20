@@ -5,9 +5,15 @@ import (
 	"myapp/proto"
 	"myapp/utils"
 	helper "mymodule"
+	"os"
 )
 
 func main() {
+
+	// ========================================================== //
+	// =======================FUNC PROGRAM======================= //
+	// ========================================================== //
+
 	fmt.Println("Hello, Go!")
 	utils.HelperFunction()
 
@@ -21,6 +27,11 @@ func main() {
 
 	fmt.Printf("This is the sum of two variables = %d\n", totalSum)
 
+	// ========================================================== //
+	// =======================STRUCT PROGRAM===================== //
+	// ========================================================== //
+
+	// declare variable to store input
 	var userName, userEmail string
 	var userAge uint
 
@@ -42,4 +53,30 @@ func main() {
 
 	// call Walk method (function associated with Person struct)
 	fmt.Println(person.Walk())
+
+	// passed Person struct object pointer to function, returned same pointer stored in personPtr, then display data
+	var personPtr = proto.Person_Get(&person)
+	fmt.Println(personPtr.Age)
+
+	// Pause program exit
+	fmt.Println("Press the Enter Key to terminate the console screen!")
+	fmt.Scanln()
+
+	// ========================================================== //
+	// =======================QUIT PROGRAM======================= //
+	// ========================================================== //
+
+	// declare var to store user exit status input
+	var exitStatus string
+
+	// get user input and store at the address of var
+	fmt.Printf("Press y repeat program, n to exit >> ")
+	fmt.Scanln(&exitStatus)
+
+	// check user input for programming exit/continuity
+	if exitStatus == "Y" || exitStatus == "y" {
+		main()
+	} else {
+		os.Exit(0)
+	}
 }
