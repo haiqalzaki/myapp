@@ -1,6 +1,7 @@
 package main
 
 import (
+	"dirman"
 	"fmt"
 	"myapp/proto"
 	"myapp/utils"
@@ -61,6 +62,9 @@ func main() {
 	// Pause program exit
 	fmt.Println("Press the Enter Key to terminate the console screen!")
 	fmt.Scanln()
+
+	// Iterate each item in current directory and display
+	dirman.See_Dir()
 
 	// ========================================================== //
 	// =======================QUIT PROGRAM======================= //
