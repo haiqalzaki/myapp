@@ -1,11 +1,9 @@
 package main
 
 import (
-	"dirman"
 	"fmt"
 	"myapp/proto"
 	"myapp/utils"
-	helper "mymodule"
 	"os"
 )
 
@@ -17,9 +15,6 @@ func main() {
 
 	fmt.Println("Hello, Go!")
 	utils.HelperFunction()
-
-	fmt.Println("This is a helper function from another module.")
-	helper.HelperFunction()
 
 	var x uint = 287
 	var y uint = 599
@@ -59,13 +54,6 @@ func main() {
 	var personPtr = proto.Person_Get(&person)
 	fmt.Println(personPtr.Age)
 
-	// Pause program exit
-	fmt.Println("Press the Enter Key to terminate the console screen!")
-	fmt.Scanln()
-
-	// Iterate each item in current directory and display
-	dirman.See_Dir()
-
 	// ========================================================== //
 	// =======================QUIT PROGRAM======================= //
 	// ========================================================== //
@@ -74,7 +62,7 @@ func main() {
 	var exitStatus string
 
 	// get user input and store at the address of var
-	fmt.Printf("Press y repeat program, n to exit >> ")
+	fmt.Printf("Press Y repeat program, any key to exit >> ")
 	fmt.Scanln(&exitStatus)
 
 	// check user input for programming exit/continuity
